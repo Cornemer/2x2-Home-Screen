@@ -1,5 +1,5 @@
 void display() {
-    println("\t\t\tWidth="+width, "\tHeight="+height); 
+  println("\t\t\tWidth="+width, "\tHeight="+height); 
   println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
   //
   String instruct="no honey mustar (bad)";
