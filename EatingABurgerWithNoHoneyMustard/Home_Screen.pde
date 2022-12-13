@@ -27,7 +27,7 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  tint(tintDayMode, tintDayModeOpacity); //Night Mode Tint:
+  //tint(tintDayMode, tintDayModeOpacity); //Night Mode Tint:
   //tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity);
   image(backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   //image with tint()
