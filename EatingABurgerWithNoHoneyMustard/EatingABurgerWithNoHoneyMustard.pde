@@ -1,7 +1,10 @@
 //Global Variables
 int appWidth, appHeight, largerDimension, smallerDimension;
 Boolean OS_On=false, splashScreenStart=false;
-color resetDefaultInk=#000000, white=#FFFFFF, blue=#4169e1;
+Boolean nightMode=false; //Bonus #1: populate with sytem clock
+//Ultimate Bonus, Gr 11: use API-sunrise for system clock start, API-sunset for system clock end
+//Hint: https://processing.org/reference/hour_.html
+color resetDefaultInk=#FFFFFF, white=#FFFFFF, blue=#4169e1;
 /* Night Mode Comment
  Purple not for Night Mode, full BLUE
  resetDefaultInk is Night Mode friendly
@@ -25,6 +28,7 @@ void draw() {
   //Assignemnt #2: OS Level Mouse CLick and Splash Screen
   if ( OS_On==true && splashScreenStart==false ) splashScreen(); //OS Level MOUSE Click
   if ( splashScreenStart==true ) homeScreen();
+  println(splashScreenStart);
   //
 }//End draw
 //
@@ -34,12 +38,33 @@ void keyPressed() {
     splashScreenStart = true;
     backgroundImage();
   }//End Splash Screen SPACE Bar
- //
+  //
+  //Key Board Short Cuts
+  if ( splashScreenStart==true ) {//Home Screen Only Variables
+    if ( key==CODED || keyCode==ESC ) exit();
+    if ( key=='Q' || key=='q' ) exit();
+    if ( key=='N' || key=='n' ) {
+      if ( nightMode==false ) { 
+        nightMode = true;
+        backgroundImage();
+        //Reminder: must redraw all of rectangles too, and Home Screen
+      } else { 
+        nightMode = false;
+        backgroundImage();
+        //Reminder: must redraw all of rectangles too, and Home Screen
+      }
+    }
+  }//Home Screen Only
+  //
 }//End keyPressed
 //
 void mousePressed() {
   //OS Level MouseClick
   if ( OS_On==false ) OS_On=true;//End OS Level MouseClick
+  if ( splashScreenStart==true ) {//Home Screen Only Variables
+    if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) exit();
+  }//Home Screen Only
+  //
 }//End mousePressed
 //
 //End MAIN Program
