@@ -39,7 +39,7 @@ void quitButtonImage() {
     //Debugging: x-value must be centered
     float centerX=appWidth*1/2;
     quitButtonImageRectX = centerX - quitButtonImageWidth_Adjusted * 1/2;
-    //imageTintNightMode();
+    imageTintNightMode();
     image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Adjusted, quitButtonImageHeight_Calculated );
     //
   } else {//Portrait

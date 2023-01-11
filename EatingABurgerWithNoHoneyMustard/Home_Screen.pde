@@ -16,14 +16,14 @@ void homeScreen() { //Exists in VOID DRAW
    - See Case Study
    - Note: must have one image with aspect ratio
    */
-//
-//Quit Button, move to Button Subprogram
+  // 
+  //Quit Button, move to Button Subprogram
   if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) {
     /*
     fill(white); //Testing Only
-    rect( quitX, quitY, quitWidth, quitHeight ); //Testing Only
-    noFill(); //Testing Only
-    */
+     rect( quitX, quitY, quitWidth, quitHeight ); //Testing Only
+     noFill(); //Testing Only
+     */
     noStroke();
     fill(white);
     rect( quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
@@ -39,7 +39,7 @@ void homeScreen() { //Exists in VOID DRAW
     stroke(1); //reset dedault
     quitButtonText();
   }
-  //rect( quitX, quitY, quitWidth, quitHeight );
+  rect( quitX, quitY, quitWidth, quitHeight );
   //
 }//End homeScreen
 //
@@ -53,9 +53,21 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  //imageTintNightMode();
+  imageTintNightMode();
   image(backgroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   //image with tint()
 }//End backgroundImage
+void nineRect() {
+  stroke (black);
+  noFill();
+  rect(rect1X, rect1Y, rect1W, rect1H);
+  rect(rect2X, rect2Y, rect2W, rect2H);
+  rect(rect3X, rect3Y, rect3W, rect3H);
+  rect(rect4X, rect4Y, rect4W, rect4H);
+  rect(rect5X, rect5Y, rect5W, rect5H);
+  rect(rect6X, rect6Y, rect6W, rect6H);
+  rect(rect7X, rect7Y, rect7W, rect7H);
+  rect(rect8X, rect8Y, rect8W, rect8H);
+}
 //
 //End Home Screen Subprogram
