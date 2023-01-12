@@ -21,7 +21,7 @@ float rect8X, rect8Y, rect8W, rect8H;
  */
 //
 void setup() {
-  size(600, 400);
+  size(1920, 1080);
   //fullScreen(); //displayWidth, displayHeight
   appWidth = width;
   appHeight = height;
